@@ -1,0 +1,112 @@
+/*CROSS BROWSER FONTS*/
+@font-face {
+    font-family: myAileronsFont;
+    src: url(../typefonts/Ailerons/Ailerons-Typeface.otf);
+    src: url(../typefonts/Ailerons/Ailerons-Typeface.eot?#iefix)
+             format('embedded-opentype'),
+         url(../typefonts/Ailerons/Ailerons-Typeface.woff) format('woff'),
+         url(../typefonts/Ailerons/Ailerons-Typeface.ttf) format('truetype');
+}
+
+body {
+  /* background-image: url(../img/jeremy-perkins-390608small.jpg); */
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/jeremy-perkins-390608small.jpg);
+}
+
+#top, #middle, #bottom {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.planet {
+text-align: center;
+padding-top: 50px;
+padding-bottom: 50px;
+}
+
+.loader {
+  position: absolute;
+  opacity: 1;
+}
+
+.loaderbg circle {
+  position: absolute;
+  opacity: 1;
+}
+
+.loader circle {
+  animation: draw 5s infinite ease-in-out;
+  transform-origin: center;
+  transform: rotate(-90deg);
+}
+
+.loader-2 circle,
+.loader-6 circle {
+  animation-delay: 3s;
+}
+
+.loader-7 circle {
+  animation-delay: 2s;
+}
+
+.loader-4 circle,
+.loader-8 circle {
+  animation-delay: 1s;
+}
+
+.loader-3 {
+  transform: rotateY(180deg);
+}
+
+.loader-6,
+.loader-7,
+.loader-8 {
+  transform: rotateX(180deg) rotateY(180deg);
+}
+
+.loader-5 circle {
+  opacity: .3;
+}
+
+@keyframes draw {
+  50% {
+    stroke-dashoffset: 0;
+    transform: scale(.4);
+  }
+}
+
+h1 {
+  font-family: myAileronsFont;
+  text-align: center;
+  color: white;
+  font-weight: 900;
+}
+
+.underline {
+    -webkit-animation: colourBlend 5s infinite; /* Safari 4.0 - 8.0 */
+    animation: colourBlend 7s infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes colourBlend {
+  0%   {color: red;}
+  25%  {color: yellow;}
+  50%  {color: blue;}
+  100% {color: green;}
+  0%   {color: green;}
+  25%  {color: blue;}
+  50%  {color: yellow;}
+  100% {color: red;}
+}
+
+/* Standard syntax */
+@keyframes colourBlend {
+  0%   {color: red;}
+  25%  {color: yellow;}
+  50%  {color: blue;}
+  100% {color: green;}
+  0%   {color: green;}
+  25%  {color: blue;}
+  50%  {color: yellow;}
+  100% {color: red;}
+}
