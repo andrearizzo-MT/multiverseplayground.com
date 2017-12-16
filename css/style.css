@@ -8,9 +8,122 @@
          url(../typefonts/Ailerons/Ailerons-Typeface.ttf) format('truetype');
 }
 
+/* Standard syntax */
+@keyframes bg-opacity {
+  0%   {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(../img/jeremy-perkins-390608small.jpg);}
+  10%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../img/jeremy-perkins-390608small.jpg);}
+  20%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../img/jeremy-perkins-390608small.jpg);}
+  30%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../img/jeremy-perkins-390608small.jpg);}
+  40%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/jeremy-perkins-390608small.jpg);}
+  50%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../img/jeremy-perkins-390608small.jpg);}
+  60%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../img/jeremy-perkins-390608small.jpg);}
+  70%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(../img/jeremy-perkins-390608small.jpg);}
+  80%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(../img/jeremy-perkins-390608small.jpg);}
+  90%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.0)), url(../img/jeremy-perkins-390608small.jpg);}
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes bg-opacity {
+  0%   {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(../img/jeremy-perkins-390608small.jpg);}
+  10%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../img/jeremy-perkins-390608small.jpg);}
+  20%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../img/jeremy-perkins-390608small.jpg);}
+  30%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../img/jeremy-perkins-390608small.jpg);}
+  40%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/jeremy-perkins-390608small.jpg);}
+  50%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../img/jeremy-perkins-390608small.jpg);}
+  60%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../img/jeremy-perkins-390608small.jpg);}
+  70%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(../img/jeremy-perkins-390608small.jpg);}
+  80%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(../img/jeremy-perkins-390608small.jpg);}
+  90%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.0)), url(../img/jeremy-perkins-390608small.jpg);}
+}
+
+/* Safari 4.0 - 8.0 */
+@-moz-keyframes bg-opacity {
+  0%   {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(../img/jeremy-perkins-390608small.jpg);}
+  10%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../img/jeremy-perkins-390608small.jpg);}
+  20%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../img/jeremy-perkins-390608small.jpg);}
+  30%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../img/jeremy-perkins-390608small.jpg);}
+  40%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/jeremy-perkins-390608small.jpg);}
+  50%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../img/jeremy-perkins-390608small.jpg);}
+  60%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../img/jeremy-perkins-390608small.jpg);}
+  70%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(../img/jeremy-perkins-390608small.jpg);}
+  80%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(../img/jeremy-perkins-390608small.jpg);}
+  90%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.0)), url(../img/jeremy-perkins-390608small.jpg);}
+}
+
+/* Safari 4.0 - 8.0 */
+@-o-keyframes bg-opacity {
+  0%   {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(../img/jeremy-perkins-390608small.jpg);}
+  10%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../img/jeremy-perkins-390608small.jpg);}
+  20%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../img/jeremy-perkins-390608small.jpg);}
+  30%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../img/jeremy-perkins-390608small.jpg);}
+  40%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/jeremy-perkins-390608small.jpg);}
+  50%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../img/jeremy-perkins-390608small.jpg);}
+  60%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../img/jeremy-perkins-390608small.jpg);}
+  70%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(../img/jeremy-perkins-390608small.jpg);}
+  80%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(../img/jeremy-perkins-390608small.jpg);}
+  90%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.0)), url(../img/jeremy-perkins-390608small.jpg);}
+}
+
+/* Safari 4.0 - 8.0 */
+@-ms-keyframes bg-opacity {
+  0%   {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(../img/jeremy-perkins-390608small.jpg);}
+  10%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../img/jeremy-perkins-390608small.jpg);}
+  20%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../img/jeremy-perkins-390608small.jpg);}
+  30%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../img/jeremy-perkins-390608small.jpg);}
+  40%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/jeremy-perkins-390608small.jpg);}
+  50%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../img/jeremy-perkins-390608small.jpg);}
+  60%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(../img/jeremy-perkins-390608small.jpg);}
+  70%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(../img/jeremy-perkins-390608small.jpg);}
+  80%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(../img/jeremy-perkins-390608small.jpg);}
+  90%  {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.0)), url(../img/jeremy-perkins-390608small.jpg);}
+}
+
+@keyframes draw {
+  50% {
+    stroke-dashoffset: 0;
+    transform: scale(.2);
+  }
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes colourBlend {
+  from   {color: #000000;}
+  to     {color: #696969;}
+}
+
+/* Standard syntax */
+@keyframes colourBlend {
+  from   {color: #000000;}
+  to     {color: #696969;}
+}
+
 body {
   /* background-image: url(../img/jeremy-perkins-390608small.jpg); */
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/jeremy-perkins-390608small.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../img/jeremy-perkins-390608small.jpg);
+  animation-name: bg-opacity;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-name: bg-opacity;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+
+  -moz-animation-name: bg-opacity;
+  -moz-animation-duration: 2s;
+  -moz-animation-direction: alternate;
+  -moz-animation-iteration-count: infinite;
+
+  -o-animation-name: bg-opacity;
+  -o-animation-duration: 2s;
+  -o-animation-direction: alternate;
+  -o-animation-iteration-count: infinite;
+
+  -ms-animation-name: bg-opacity;
+  -ms-animation-duration: 2s;
+  -ms-animation-direction: alternate;
+  -ms-animation-iteration-count: infinite;
 }
 
 #top, #middle, #bottom {
@@ -42,16 +155,16 @@ padding-bottom: 50px;
 
 .loader-2 circle,
 .loader-6 circle {
-  animation-delay: 3s;
+  animation-delay: 6s;
 }
 
 .loader-7 circle {
-  animation-delay: 2s;
+  animation-delay: 4s;
 }
 
 .loader-4 circle,
 .loader-8 circle {
-  animation-delay: 1s;
+  animation-delay: 2s;
 }
 
 .loader-3 {
@@ -68,45 +181,16 @@ padding-bottom: 50px;
   opacity: .3;
 }
 
-@keyframes draw {
-  50% {
-    stroke-dashoffset: 0;
-    transform: scale(.4);
-  }
-}
-
 h1 {
   font-family: myAileronsFont;
   text-align: center;
-  color: white;
+  color: #7e7e7e;
   font-weight: 900;
 }
 
-.underline {
-    -webkit-animation: colourBlend 5s infinite; /* Safari 4.0 - 8.0 */
-    animation: colourBlend 7s infinite;
-}
-
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes colourBlend {
-  0%   {color: red;}
-  25%  {color: yellow;}
-  50%  {color: blue;}
-  100% {color: green;}
-  0%   {color: green;}
-  25%  {color: blue;}
-  50%  {color: yellow;}
-  100% {color: red;}
-}
-
-/* Standard syntax */
-@keyframes colourBlend {
-  0%   {color: red;}
-  25%  {color: yellow;}
-  50%  {color: blue;}
-  100% {color: green;}
-  0%   {color: green;}
-  25%  {color: blue;}
-  50%  {color: yellow;}
-  100% {color: red;}
+.coulourBlend {
+  animation-name: colourBlend;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 }
