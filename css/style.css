@@ -8,6 +8,16 @@
          url(../typefonts/Ailerons/Ailerons-Typeface.ttf) format('truetype');
 }
 
+@font-face {
+    font-family: myStencilOne;
+    src: url(../typefonts/StencilOne/StencilOne.otf);
+    src: url(../typefonts/StencilOne/StencilOne.eot?#iefix)
+             format('embedded-opentype'),
+         url(../typefonts/StencilOne/StencilOne.woff) format('woff'),
+         url(../typefonts/StencilOne/StencilOne.ttf) format('truetype');
+}
+
+
 /* Standard syntax */
 @keyframes bg-opacity {
   0%   {animation-timing-function: ease-in; background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(../img/jeremy-perkins-390608small.jpg);}
@@ -97,7 +107,7 @@
   to     {color: #696969;}
 }
 
-body {
+.home {
   /* background-image: url(../img/jeremy-perkins-390608small.jpg); */
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../img/jeremy-perkins-390608small.jpg);
   animation-name: bg-opacity;
@@ -124,6 +134,15 @@ body {
   -ms-animation-duration: 2s;
   -ms-animation-direction: alternate;
   -ms-animation-iteration-count: infinite;
+}
+
+.punisher{
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://fsmedia.imgix.net/73/46/0d/95/afdc/487e/af14/5b44a1b3f705/nov-29-2017-22-34-38gifgif.gif') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
 }
 
 #top, #middle, #bottom {
@@ -186,6 +205,20 @@ h1 {
   text-align: center;
   color: #7e7e7e;
   font-weight: 900;
+}
+
+footer{
+  position: fixed;
+  display: block;
+  bottom: 0;
+  text-align: justify;
+  width: 100%;
+}
+
+footer, #photonVoltage, #photonPercentage {
+  font-family: myStencilOne;
+  font-weight: 700;
+  font-size: 35px;
 }
 
 .coulourBlend {
