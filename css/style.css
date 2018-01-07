@@ -208,17 +208,18 @@ h1 {
 }
 
 footer{
+  font-family: myStencilOne;
+  font-size: 40px;
   position: fixed;
   display: block;
   bottom: 0;
-  text-align: justify;
   width: 100%;
 }
 
-footer, #photonVoltage, #photonPercentage {
-  font-family: myStencilOne;
+#photonName, #photonConnected, #photonVoltage, #photonPercentage {
+  font-family: myAileronsFont;
   font-weight: 700;
-  font-size: 35px;
+  font-size: 40px;
 }
 
 .coulourBlend {
@@ -226,4 +227,21 @@ footer, #photonVoltage, #photonPercentage {
   animation-duration: 5s;
   animation-direction: alternate;
   animation-iteration-count: infinite;
+}
+
+@media only screen and (max-width: 700px) {
+  footer{
+    font-family: myStencilOne;
+    font-size: 30px;
+    position: fixed;
+    display: block;
+    bottom: 0;
+    width: 100%;
+  }
+
+  #photonName, #photonConnected, #photonVoltage, #photonPercentage {
+    font-family: myAileronsFont;
+    font-weight: 700;
+    font-size: 30px;
+  }
 }

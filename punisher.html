@@ -7,9 +7,9 @@
 		<title>The Punisher</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 		<script src="js/script.js"></script>
-
+		<script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -22,7 +22,7 @@
 
 	</head>
 
-	<body class="punisher" onload="getThePunisher();">
+	<body display="none" class="punisher" onload="hideFooter(); getThePunisher();">
 
 		<!-- NAVIGATION -->
 		<div class="w3-animate-opacity w3-top">
@@ -45,12 +45,12 @@
 		</section>
 
 		<!-- FOOTER -->
-		<footer class="w3-animate-opacity w3-text-gray">
-      <div class="w3-container w3-center ">
-				Device: <span id="photonName" class="w3-bar-item w3-text-green w3-mobile"></span><br>
-				Connected: <span id="photonConnected" class="w3-bar-item w3-text-blue w3-mobile"></span><br>
-        Charge: <span id="photonPercentage" class="w3-bar-item w3-text-yellow w3-mobile"></span><br>
-        Voltage: <span id="photonVoltage" class="w3-bar-item w3-text-red w3-mobile"></span>
+		<footer class="w3-animate-opacity w3-text-dark-grey">
+      <div id="footerStats" class="w3-animate-opacity w3-container w3-left">
+				Device: <span id="photonName" class="w3-text-green w3-mobile"></span><br>
+				Connected: <span id="photonConnected" class="w3-text-red w3-mobile"></span><br>
+        Charge: <span id="photonPercentage" class="w3-text-yellow w3-mobile"></span><br>
+        Voltage: <span id="photonVoltage" class="w3-text-deep-purple w3-mobile"></span>
       </div>
     </footer>
 
