@@ -32,13 +32,14 @@ function getThePunisher(){
       // photonVoltage.innerHTML = "--" + " V";
       // photonPercentage.innerHTML = "--" + " %"
 
-      if (connected = false){
+      if (connected === false){
         photonName.innerHTML = stats.name;
-        photonConnected.innerHTML = "OFFLINE " + '<i class="fas fa-times-circle"></i>';
-        photonVoltage.innerHTML = "--" + "V";
-        photonPercentage.innerHTML = "--" + "%"
-        exit();
-      } else {
+        photonConnected.innerHTML = '<i class="fas fa-times-circle w3-text-red"></i>' + " OFFLINE";
+        photonLastPing.innerHTML = stats.last_heard.slice(0,10) + " " + '<i class="fas fa-space-shuttle w3-text-light-green"></i>' + " " + stats.last_heard.slice(11,19);
+        photonVoltage.innerHTML = "n/a";
+        photonPercentage.innerHTML = "n/a";
+        showFooter();
+      } else if (connected === true) {
         //GET VOLTAGE REQUEST
         $.ajax({
           type: 'GET',
@@ -51,12 +52,12 @@ function getThePunisher(){
               url: batteryPercentage,
               success: function(percentage){
                 console.log('success',percentage);
-
                 //ASSIGNING JSON TO INNERHTML
-                if(connected = true){
-                  photonConnected.innerHTML = "ONLINE " + '<i class="fas fa-check-circle"></i>';
+                if(connected === true){
+                  photonConnected.innerHTML = '<i class="fas fa-check-circle w3-text-green"></i>' + " ONLINE";
                 }
                 photonName.innerHTML = stats.name;
+                photonLastPing.innerHTML = stats.last_heard.slice(0,10) + " " + '<i class="fas fa-space-shuttle w3-text-light-green"></i>' + " " + stats.last_heard.slice(11,19);
                 photonVoltage.innerHTML = voltage.result.toFixed(1) + "V";
                 photonPercentage.innerHTML = percentage.result.toFixed(1) + "%";
                 showFooter();

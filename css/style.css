@@ -216,7 +216,7 @@ footer{
   width: 100%;
 }
 
-#photonName, #photonConnected, #photonVoltage, #photonPercentage {
+#photonName, #photonConnected, #photonLastPing, #photonVoltage, #photonPercentage {
   font-family: myAileronsFont;
   font-weight: 700;
   font-size: 40px;
@@ -239,7 +239,7 @@ footer{
     width: 100%;
   }
 
-  #photonName, #photonConnected, #photonVoltage, #photonPercentage {
+  #photonName, #photonConnected, #photonLastPing, #photonVoltage, #photonPercentage {
     font-family: myAileronsFont;
     font-weight: 700;
     font-size: 30px;
