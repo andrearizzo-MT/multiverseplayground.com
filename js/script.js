@@ -36,7 +36,7 @@ function getThePunisher(){
       if (connected === false){
         photonPercentage.innerHTML = '<i class="fas fa-battery-empty w3-text-dark-grey fa-lg"></i>&nbsp;&nbsp;' + "n/a";
         photonName.innerHTML = '<i class="fas fa-fighter-jet w3-text-dark-grey fa-lg"></i>&nbsp;&nbsp;' + stats.name;
-        photonConnected.innerHTML = '<i class="fas fa-plug w3-text-dark-grey fa-lg fa-rotate-90"></i>&nbsp;&nbsp;&nbsp;' + '<i class="fas fa-times-circle w3-text-red"></i>'; //OFFLINE
+        photonConnected.innerHTML = '<i class="fas fa-plug w3-text-dark-grey fa-lg fa-rotate-90"></i>&nbsp;&nbsp;&nbsp;' + '<i class="fas fa-times-circle w3-text-red fa-lg"></i>'; //OFFLINE
         photonLastTime.innerHTML = '<i class="far fa-clock w3-text-dark-grey fa-lg"></i>&nbsp;&nbsp;' + hourPlusOne + stats.last_heard.slice(13,19);
         photonLastDate.innerHTML = '<i class="fas fa-calendar-alt w3-text-dark-grey fa-lg"></i>&nbsp;&nbsp;' + stats.last_heard.slice(0,10);
         photonVoltage.innerHTML = '<i class="fab fa-medapps w3-text-dark-grey fa-lg"></i>&nbsp;&nbsp;&nbsp;' + "n/a";
