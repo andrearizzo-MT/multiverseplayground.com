@@ -214,12 +214,29 @@ footer{
   display: block;
   bottom: 0;
   width: 100%;
+  padding-bottom: 20px;
 }
 
-#photonName, #photonConnected, #photonLastPing, #photonVoltage, #photonPercentage {
+#photonName, #photonConnected, #photonLastTime, #photonLastDate, #photonVoltage, #photonPercentage {
   font-family: myAileronsFont;
   font-weight: 700;
   font-size: 40px;
+}
+
+#photonConnected {
+  padding-left: 10px;
+}
+
+#photonLastTime {
+  padding-left: 6px;
+}
+
+#photonLastDate {
+  padding-left: 12px;
+}
+
+#photonVoltage {
+  padding-left: 16px;
 }
 
 .coulourBlend {
@@ -230,6 +247,16 @@ footer{
 }
 
 @media only screen and (max-width: 700px) {
+
+  .punisher{
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://fsmedia.imgix.net/73/46/0d/95/afdc/487e/af14/5b44a1b3f705/nov-29-2017-22-34-38gifgif.gif') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
+
   footer{
     font-family: myStencilOne;
     font-size: 30px;
@@ -237,11 +264,25 @@ footer{
     display: block;
     bottom: 0;
     width: 100%;
+    padding-bottom: 10px;
   }
 
-  #photonName, #photonConnected, #photonLastPing, #photonVoltage, #photonPercentage {
+  #photonName, #photonConnected, #photonLastTime, #photonLastDate, #photonVoltage, #photonPercentage {
     font-family: myAileronsFont;
     font-weight: 700;
     font-size: 30px;
   }
+
+  #photonLastTime {
+    padding-left: 4px;
+  }
+
+  #photonLastDate {
+    padding-left: 8px;
+  }
+
+  #photonVoltage{
+    padding-left: 12px;
+  }
+
 }
