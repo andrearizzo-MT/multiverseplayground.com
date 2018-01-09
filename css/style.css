@@ -214,7 +214,8 @@ footer{
   display: block;
   bottom: 0;
   width: 100%;
-  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-bottom: 30px;
 }
 
 #photonName, #photonConnected, #photonLastTime, #photonLastDate, #photonVoltage, #photonPercentage {
@@ -224,7 +225,7 @@ footer{
 }
 
 #photonConnected {
-  padding-left: 10px;
+  padding-left: 15px;
 }
 
 #photonLastTime {
@@ -232,12 +233,37 @@ footer{
 }
 
 #photonLastDate {
-  padding-left: 12px;
+  padding-left: 9px;
 }
 
 #photonVoltage {
   padding-left: 16px;
 }
+
+#photonNameResult {
+  padding-left: 18px;
+}
+
+#photonConnectedResult {
+  padding-left: 26px;
+}
+
+#photonPercentageResult {
+  padding-left: 15px;
+}
+
+#photonVoltageResult {
+  padding-left: 31px;
+}
+
+#photonLastTimeResult {
+  padding-left: 20px;
+}
+
+#photonLastDateResult {
+  padding-left: 22px;
+}
+
 
 .coulourBlend {
   animation-name: colourBlend;
@@ -264,7 +290,8 @@ footer{
     display: block;
     bottom: 0;
     width: 100%;
-    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-bottom: 15px;
   }
 
   #photonName, #photonConnected, #photonLastTime, #photonLastDate, #photonVoltage, #photonPercentage {
@@ -273,16 +300,36 @@ footer{
     font-size: 30px;
   }
 
+  #photonConnected {
+    padding-left: 10px;
+  }
+
   #photonLastTime {
     padding-left: 4px;
   }
 
   #photonLastDate {
-    padding-left: 8px;
+    padding-left: 6px;
   }
 
   #photonVoltage{
-    padding-left: 12px;
+    padding-left: 11px;
+  }
+
+  #photonPercentageResult {
+    padding-left: 20px;
+  }
+
+  #photonVoltageResult {
+    padding-left: 35px;
+  }
+
+  #photonLastTimeResult {
+    padding-left: 25px;
+  }
+
+  #photonLastDateResult {
+    padding-left: 27px;
   }
 
 }

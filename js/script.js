@@ -34,12 +34,18 @@ function getThePunisher(){
       // photonPercentage.innerHTML = "--" + " %"
 
       if (connected === false){
-        photonPercentage.innerHTML = '<i class="fas fa-battery-empty w3-text-dark-grey fa-lg"></i>&nbsp;&nbsp;' + "n/a";
-        photonName.innerHTML = '<i class="fas fa-fighter-jet w3-text-dark-grey fa-lg"></i>&nbsp;&nbsp;' + stats.name;
-        photonConnected.innerHTML = '<i class="fas fa-plug w3-text-dark-grey fa-lg fa-rotate-90"></i>&nbsp;&nbsp;&nbsp;' + '<i class="fas fa-times-circle w3-text-red fa-lg"></i>'; //OFFLINE
-        photonLastTime.innerHTML = '<i class="far fa-clock w3-text-dark-grey fa-lg"></i>&nbsp;&nbsp;' + hourPlusOne + stats.last_heard.slice(13,19);
-        photonLastDate.innerHTML = '<i class="fas fa-calendar-alt w3-text-dark-grey fa-lg"></i>&nbsp;&nbsp;' + stats.last_heard.slice(0,10);
-        photonVoltage.innerHTML = '<i class="fab fa-medapps w3-text-dark-grey fa-lg"></i>&nbsp;&nbsp;&nbsp;' + "n/a";
+        photonName.innerHTML = '<i class="fas fa-fighter-jet w3-text-dark-grey fa-lg"></i>';
+        photonNameResult.innerHTML = stats.name;
+        photonConnected.innerHTML = '<i class="fas fa-plug w3-text-dark-grey fa-lg fa-rotate-90"></i>'; //OFFLINE
+        photonConnectedResult.innerHTML = '<i class="fas fa-times-circle w3-text-red"></i>'; //OFFLINE
+        photonPercentage.innerHTML = '<i class="fas fa-battery-empty w3-text-dark-grey fa-lg"></i>';
+        photonPercentageResult.innerHTML = "N / A";
+        photonVoltage.innerHTML = '<i class="fab fa-medapps w3-text-dark-grey fa-lg"></i>';
+        photonVoltageResult.innerHTML = "N / A";
+        photonLastTime.innerHTML = '<i class="far fa-clock w3-text-dark-grey fa-lg"></i>';
+        photonLastTimeResult.innerHTML = hourPlusOne + stats.last_heard.slice(13,19);
+        photonLastDate.innerHTML = '<i class="fas fa-calendar-alt w3-text-dark-grey fa-lg"></i>';
+        photonLastDateResult.innerHTML = stats.last_heard.slice(0,10);
         showFooter();
       } else if (connected === true) {
         //GET VOLTAGE REQUEST
@@ -56,26 +62,35 @@ function getThePunisher(){
                 console.log('success',percentage);
                 //JSON Time GMT i.e. + 1 since GMT+1 for MALTA
                 var hourPlusOne = parseInt(stats.last_heard.slice(11,13)) + 1;
-
                 //ASSIGNING JSON TO INNERHTML
-                if (percentage.result.toFixed(0) < 15){
-                  photonPercentage.innerHTML = '<i class="fas fa-battery-empty w3-text-red fa-lg"></i>&nbsp;&nbsp;' + percentage.result.toFixed(0) + '<i class="fas fa-percent"></i>';
-                } else if (percentage.result.toFixed(0) >= 15 && percentage.result.toFixed(0) <= 25){
-                  photonPercentage.innerHTML = '<i class="fas fa-battery-quarter w3-text-orange fa-lg"></i>&nbsp;&nbsp;' + percentage.result.toFixed(0) + "%";
-                } else if (percentage.result.toFixed(0) == 50 || percentage.result.toFixed(0) < 50 && percentage.result.toFixed(0) > 25 ){
-                  photonPercentage.innerHTML = '<i class="fas fa-battery-half w3-text-yellow fa-lg"></i>&nbsp;&nbsp;' + percentage.result.toFixed(0) + "%";
-                } else if (percentage.result.toFixed(0) == 75 || percentage.result.toFixed(0) < 75 && percentage.result.toFixed(0) > 50 ){
-                  photonPercentage.innerHTML = '<i class="fas fa-battery-three-quarters w3-text-green fa-lg"></i>&nbsp;&nbsp;' + percentage.result.toFixed(0) + "%";
-                } else if (percentage.result.toFixed(0) == 100 || percentage.result.toFixed(0) < 100 && percentage.result.toFixed(0) > 75 ){
-                  photonPercentage.innerHTML = '<i class="fas fa-battery-full w3-text-white fa-lg"></i>&nbsp;&nbsp;' + percentage.result.toFixed(0) + '<i class="fas fa-percent fa-xs"></i>';
-                }
-                photonName.innerHTML = '<i class="fas fa-fighter-jet w3-text-dark-grey fa-lg"></i>&nbsp;&nbsp;' + stats.name;
+                photonName.innerHTML = '<i class="fas fa-fighter-jet w3-text-dark-grey fa-lg"></i>';
+                photonNameResult.innerHTML = stats.name;
                 if(connected === true){
-                  photonConnected.innerHTML = '<i class="fas fa-plug w3-text-dark-grey fa-lg fa-rotate-90"></i>&nbsp;&nbsp;&nbsp;' + '<i class="fas fa-check-circle w3-text-green fa-lg"></i>'; //ONLINE
+                  photonConnected.innerHTML = '<i class="fas fa-plug w3-text-dark-grey fa-lg fa-rotate-90"></i>'; //ONLINE
+                  photonConnectedResult.innerHTML = '<i class="fas fa-check-circle w3-text-green"></i>'; //ONLINE
                 }
-                photonLastTime.innerHTML = '<i class="far fa-clock w3-text-dark-grey fa-lg"></i>&nbsp;&nbsp;' + hourPlusOne + stats.last_heard.slice(13,19);
-                photonLastDate.innerHTML = '<i class="fas fa-calendar-alt w3-text-dark-grey fa-lg"></i>&nbsp;&nbsp;' + stats.last_heard.slice(0,10);
-                photonVoltage.innerHTML = '<i class="fab fa-medapps w3-text-dark-grey fa-lg"></i>&nbsp;&nbsp;&nbsp;' + voltage.result.toFixed(2) + "V";
+                if (percentage.result.toFixed(0) < 15){
+                  photonPercentage.innerHTML = '<i class="fas fa-battery-empty w3-text-red fa-lg"></i>';
+                  photonPercentageResult.innerHTML = Math.floor(percentage.result) + " " + '<i class="fas fa-percent"></i>';
+                } else if (percentage.result.toFixed(0) >= 15 && percentage.result.toFixed(0) <= 25){
+                  photonPercentage.innerHTML = '<i class="fas fa-battery-quarter w3-text-orange fa-lg"></i>';
+                  photonPercentageResult.innerHTML = Math.floor(percentage.result) + " " + '<i class="fas fa-percent"></i>';
+                } else if (percentage.result.toFixed(0) == 50 || percentage.result.toFixed(0) < 50 && percentage.result.toFixed(0) > 25 ){
+                  photonPercentage.innerHTML = '<i class="fas fa-battery-half w3-text-yellow fa-lg"></i>';
+                  photonPercentageResult.innerHTML = Math.floor(percentage.result) + " " + '<i class="fas fa-percent"></i>';
+                } else if (percentage.result.toFixed(0) == 75 || percentage.result.toFixed(0) < 75 && percentage.result.toFixed(0) > 50 ){
+                  photonPercentage.innerHTML = '<i class="fas fa-battery-three-quarters w3-text-green fa-lg"></i>';
+                  photonPercentageResult.innerHTML = Math.floor(percentage.result) + " " + '<i class="fas fa-percent"></i>';
+                } else if (percentage.result.toFixed(0) >= 100 || percentage.result.toFixed(0) < 100 && percentage.result.toFixed(0) > 75 ){
+                  photonPercentage.innerHTML = '<i class="fas fa-battery-full w3-text-white fa-lg"></i>';
+                  photonPercentageResult.innerHTML = Math.floor(percentage.result) + " " + '<i class="fas fa-percent fa-xs"></i>';
+                }
+                photonVoltage.innerHTML = '<i class="fab fa-medapps w3-text-dark-grey fa-lg"></i>';
+                photonVoltageResult.innerHTML = voltage.result.toFixed(2) + " V";
+                photonLastTime.innerHTML = '<i class="far fa-clock w3-text-dark-grey fa-lg"></i>';
+                photonLastTimeResult.innerHTML = hourPlusOne + stats.last_heard.slice(13,19);
+                photonLastDate.innerHTML = '<i class="fas fa-calendar-alt w3-text-dark-grey fa-lg"></i>';
+                photonLastDateResult.innerHTML = stats.last_heard.slice(0,10);
                 showFooter();
               }
             })
