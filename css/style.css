@@ -224,8 +224,12 @@ h1 {
   font-size: 40px;
 }
 
+#photonName {
+  padding-left: 7px;
+}
+
 #photonConnected {
-  padding-left: 15px;
+  padding-left: 13px;
 }
 
 #photonLastTime {
@@ -245,7 +249,7 @@ h1 {
 }
 
 #photonNameResult {
-  padding-left: 18px;
+  padding-left: 20px;
 }
 
 #photonConnectedResult {
@@ -309,8 +313,12 @@ h1 {
     font-size: 30px;
   }
 
+  #photonName {
+    padding-left: 3px;
+  }
+
   #photonConnected {
-    padding-left: 10px;
+    padding-left: 8px;
   }
 
   #photonLastTime {
@@ -327,6 +335,14 @@ h1 {
 
   #photonVoltage{
     padding-left: 11px;
+  }
+
+  #photonNameResult {
+    padding-left: 23px;
+  }
+
+  #photonConnectedResult {
+    padding-left: 28px;
   }
 
   #photonPercentageResult {

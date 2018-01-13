@@ -53,7 +53,7 @@ function getThePunisher(){
       // photonPercentage.innerHTML = "--" + " %"
 
       if (connected === false){
-        photonName.innerHTML = '<i class="fas fa-fighter-jet w3-text-dark-grey fa-lg"></i>';
+        photonName.innerHTML = '<i class="fas fa-microchip w3-text-dark-grey fa-lg fa-rotate-90"></i>';
         photonNameResult.innerHTML = stats.name;
         photonConnected.innerHTML = '<i class="fas fa-plug w3-text-dark-grey fa-lg fa-rotate-90"></i>'; //OFFLINE
         photonConnectedResult.innerHTML = '<i class="fas fa-times-circle w3-text-red"></i>'; //OFFLINE
@@ -87,7 +87,7 @@ function getThePunisher(){
                   hourPlusOne = "00";
                 }
                 //ASSIGNING JSON TO INNERHTML
-                photonName.innerHTML = '<i class="fas fa-fighter-jet w3-text-dark-grey fa-lg"></i>';
+                photonName.innerHTML = '<i class="fas fa-microchip w3-text-dark-grey fa-lg fa-rotate-90"></i>';
                 photonNameResult.innerHTML = stats.name;
                 if(connected === true){
                   photonConnected.innerHTML = '<i class="fas fa-plug w3-text-dark-grey fa-lg fa-rotate-90"></i>'; //ONLINE
@@ -116,7 +116,7 @@ function getThePunisher(){
                 photonLastTime.innerHTML = '<i class="far fa-clock w3-text-dark-grey fa-lg"></i>';
                 photonLastTimeResult.innerHTML = hourPlusOne + stats.last_heard.slice(13,19);
                 photonLastDate.innerHTML = '<i class="fas fa-calendar-alt w3-text-dark-grey fa-lg"></i>';
-                photonLastDateResult.innerHTML = stats.last_heard.slice(0,10);
+                photonLastDateResult.innerHTML = day + "-" + month + "-" + year;
                 showFooter();
               }
             })
