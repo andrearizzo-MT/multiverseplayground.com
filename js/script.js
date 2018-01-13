@@ -13,23 +13,38 @@ function showFooter() {
 function getThePunisher(){
 
   //PARTICLE PHOTON API SCHEMA
+  //GET GENERIC DEVICE DETAILS
   var deviceStats = "https://api.particle.io/v1/devices/34003f001447353136383631?access_token=45b47fb7b84f6200ba7a9decf2788b1098394215"
+  //GET VOLTAGE VARIABLE READING
   var batteryVoltage = "https://api.particle.io/v1/devices/34003f001447353136383631/voltage?access_token=45b47fb7b84f6200ba7a9decf2788b1098394215"
+  //GET STATE OF CHARGE SOC VARIABLE READING
   var batteryPercentage = "https://api.particle.io/v1/devices/34003f001447353136383631/percentage?access_token=45b47fb7b84f6200ba7a9decf2788b1098394215"
   var connected = ""
 
-  //GET STATS REQUEST
+  //GET DEVICE STATS REQUEST
   $.ajax({
     type: 'GET',
     url: deviceStats,
     success: function(stats){
       console.log('success',stats);
-      //JSON Time GMT i.e. + 1 since GMT+1 for MALTA
+      //JSON RETURNED TIME IS GMT i.e. NEED TO ADD +1 SINCE MALTA IS GMT+1
       var hourPlusOne = parseInt(stats.last_heard.slice(11,13)) + 1;
-      var minutesPlusFive = parseInt(stats.last_heard.slice(14,16)) + 5;
       if (hourPlusOne == 24){
+        //CATER FOR WHEN HOUR IS MIDNIGHT OR 24
         hourPlusOne = "00";
       }
+      //SINCE HANDSHAKE TIME IS THE TIME OF INITIAL CONNECTION BETWEEN PHOTON AND CLOUD
+      //AND TRANSMISSION TIME BY PHOTON IS CIRCA 5 MINUTES TO ACHIEVE THE LAST TRANSMISSION TIME
+      //THE INITIAL CONNECTION TIME IS ADDED BY 5 MINUTES
+      var minutesPlusFive = parseInt(stats.last_heard.slice(14,16)) + 5;
+      if (minutesPlusFive <= 9){
+        //CATER FOR SINGLE DIGIT MINUTES BETWEEN 0-9 THAT IS
+        minutesPlusFive = "0" + minutesPlusFive;
+      }
+      var day = stats.last_heard.slice(8,10);
+      var month = stats.last_heard.slice(5,7);
+      var year = stats.last_heard.slice(0,4);;
+
       //ASSIGNING VARIABLES AND INNERHTML VALUES
       connected = stats.connected;
       // photonName.innerHTML = stats.name;
@@ -51,7 +66,7 @@ function getThePunisher(){
         photonHandShake.innerHTML = '<i class="far fa-handshake w3-text-dark-grey fa-lg"></i>';
         photonHandShakeResult.innerHTML = hourPlusOne + stats.last_heard.slice(13,14) + minutesPlusFive + stats.last_heard.slice(16,19);
         photonLastDate.innerHTML = '<i class="fas fa-calendar-alt w3-text-dark-grey fa-lg"></i>';
-        photonLastDateResult.innerHTML = stats.last_heard.slice(0,10);
+        photonLastDateResult.innerHTML = day + "-" + month + "-" + year;
         showFooter();
       } else if (connected === true) {
         //GET VOLTAGE REQUEST
@@ -108,6 +123,7 @@ function getThePunisher(){
           }
         })
       }
+      //REFRESHES PAGE BY MAKING THE AJAX CALLS EVERY 1 MINUTE
       setTimeout(function(){getThePunisher();}, 60000);
     }
   })
