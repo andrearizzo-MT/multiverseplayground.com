@@ -218,7 +218,7 @@ h1 {
   padding-top: 30px;
 }
 
-#photonName, #photonConnected, #photonLastTime, #photonLastDate, #photonVoltage, #photonPercentage {
+#photonName, #photonText, #photonConnected, #photonLastTime, #photonLastDate, #photonVoltage, #photonPercentage {
   font-family: myAileronsFont;
   font-weight: 700;
   font-size: 40px;
@@ -226,6 +226,14 @@ h1 {
 
 #photonName {
   padding-left: 7px;
+}
+
+#deviceVitals {
+  background-color: rgba(56,56,56, 0.4);
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-top: 3px solid red;
+  border-bottom: 3px solid red;
 }
 
 #photonConnected {
@@ -307,7 +315,7 @@ h1 {
     transform: scale(0.8);
   }
 
-  #photonName, #photonConnected, #photonLastTime, #photonLastDate, #photonVoltage, #photonPercentage {
+  #photonName, #photonText, #photonConnected, #photonLastTime, #photonLastDate, #photonVoltage, #photonPercentage {
     font-family: myAileronsFont;
     font-weight: 700;
     font-size: 30px;
@@ -315,6 +323,14 @@ h1 {
 
   #photonName {
     padding-left: 3px;
+  }
+
+  #deviceVitals {
+    margin-top: 10px;
+    padding-top: 6px;
+    padding-bottom: 10px;
+    border-top: 3px solid red;
+    border-bottom: 3px solid red;
   }
 
   #photonConnected {

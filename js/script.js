@@ -41,6 +41,24 @@ function getThePunisher(){
         //CATER FOR SINGLE DIGIT MINUTES BETWEEN 0-9 THAT IS
         minutesPlusFive = "0" + minutesPlusFive;
       }
+      switch (minutesPlusFive) {
+        //CATER FOR DOUBLE DIGIT MINUTES BETWEEN 55 AND 59 THAT IS SKIP 60 AND START SINGLE DIGITS AGAIN 01,02,03 ETC
+          case 60:
+            minutesPlusFive = "01";
+            break;
+          case 61:
+            minutesPlusFive = "02";
+            break;
+          case 62:
+            minutesPlusFive = "03";
+            break;
+          case 63:
+            minutesPlusFive = "04";
+            break;
+          case 64:
+            minutesPlusFive = "05";
+            break;
+      }
       var day = stats.last_heard.slice(8,10);
       var month = stats.last_heard.slice(5,7);
       var year = stats.last_heard.slice(0,4);;
@@ -53,7 +71,7 @@ function getThePunisher(){
       // photonPercentage.innerHTML = "--" + " %"
 
       if (connected === false){
-        photonName.innerHTML = '<i class="fas fa-microchip w3-text-dark-grey fa-lg fa-rotate-90"></i>';
+        photonName.innerHTML = '<i class="fas fa-microchip w3-text-orange fa-lg fa-rotate-90"></i>';
         photonNameResult.innerHTML = stats.name;
         photonConnected.innerHTML = '<i class="fas fa-plug w3-text-dark-grey fa-lg fa-rotate-90"></i>'; //OFFLINE
         photonConnectedResult.innerHTML = '<i class="fas fa-times-circle w3-text-red"></i>'; //OFFLINE
@@ -81,16 +99,17 @@ function getThePunisher(){
               url: batteryPercentage,
               success: function(percentage){
                 console.log('success',percentage);
-                //JSON Time GMT i.e. + 1 since GMT+1 for MALTA
+                //JSON RETURNED TIME IS GMT i.e. NEED TO ADD +1 SINCE MALTA IS GMT+1
                 var hourPlusOne = parseInt(stats.last_heard.slice(11,13)) + 1;
                 if (hourPlusOne == 24){
+                  //CATER FOR WHEN HOUR IS MIDNIGHT OR 24
                   hourPlusOne = "00";
                 }
                 //ASSIGNING JSON TO INNERHTML
-                photonName.innerHTML = '<i class="fas fa-microchip w3-text-dark-grey fa-lg fa-rotate-90"></i>';
+                photonName.innerHTML = '<i class="fas fa-microchip w3-text-orange fa-lg fa-rotate-90"></i>';
                 photonNameResult.innerHTML = stats.name;
                 if(connected === true){
-                  photonConnected.innerHTML = '<i class="fas fa-plug w3-text-dark-grey fa-lg fa-rotate-90"></i>'; //ONLINE
+                  photonConnected.innerHTML = '<i class="fas fa-plug w3-text-red fa-lg fa-rotate-90"></i>'; //ONLINE
                   photonConnectedResult.innerHTML = '<i class="fas fa-check-circle w3-text-green"></i>'; //ONLINE
                 }
                 if (percentage.result.toFixed(0) < 15){
@@ -109,13 +128,13 @@ function getThePunisher(){
                   photonPercentage.innerHTML = '<i class="fas fa-battery-full w3-text-white fa-lg"></i>';
                   photonPercentageResult.innerHTML = Math.floor(percentage.result) + " " + '<i class="fas fa-percent fa-xs"></i>';
                 }
-                photonVoltage.innerHTML = '<i class="fab fa-medapps w3-text-dark-grey fa-lg"></i>';
+                photonVoltage.innerHTML = '<i class="fab fa-medapps w3-text-white fa-lg"></i>';
                 photonVoltageResult.innerHTML = voltage.result.toFixed(2) + " V";
                 document.getElementById('handshake').style.display = "none";
                 document.getElementById('clock').style.display = "block";
-                photonLastTime.innerHTML = '<i class="far fa-clock w3-text-dark-grey fa-lg"></i>';
+                photonLastTime.innerHTML = '<i class="far fa-clock w3-text-khaki fa-lg"></i>';
                 photonLastTimeResult.innerHTML = hourPlusOne + stats.last_heard.slice(13,19);
-                photonLastDate.innerHTML = '<i class="fas fa-calendar-alt w3-text-dark-grey fa-lg"></i>';
+                photonLastDate.innerHTML = '<i class="fas fa-calendar-alt w3-text-brown fa-lg"></i>';
                 photonLastDateResult.innerHTML = day + "-" + month + "-" + year;
                 showFooter();
               }
